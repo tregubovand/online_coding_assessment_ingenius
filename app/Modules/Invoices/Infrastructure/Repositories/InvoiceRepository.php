@@ -11,9 +11,9 @@ use App\Modules\Invoices\Infrastructure\Mappers\InvoiceMapper;
 use App\Modules\Invoices\Infrastructure\Models\InvoicesModel;
 use Ramsey\Uuid\UuidInterface;
 
-class InvoiceRepository implements InvoiceRepositoryInterface
+readonly class InvoiceRepository implements InvoiceRepositoryInterface
 {
-    public function __construct(private readonly InvoiceMapper $invoiceMapper)
+    public function __construct(private InvoiceMapper $invoiceMapper)
     {
     }
     public function getById(UuidInterface $invoiceId): ?Invoice
