@@ -20,9 +20,11 @@ return new class extends Migration
             $table->date('date');
             $table->date('due_date');
             $table->uuid('company_id');
+            $table->uuid('billing_company_id'); // In test assignment description we have it
             $table->string('status');
 
             $table->foreign('company_id')->references('id')->on('companies');
+            $table->foreign('billing_company_id')->references('id')->on('companies');
             $table->timestamps();
         });
     }

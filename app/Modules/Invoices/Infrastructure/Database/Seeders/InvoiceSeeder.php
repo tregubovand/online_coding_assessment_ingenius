@@ -34,6 +34,7 @@ class InvoiceSeeder extends Seeder
                 'date' => $faker->date(),
                 'due_date' => $faker->date(),
                 'company_id' => $companies->random()->id,
+                'billing_company_id' => $companies->random()->id,
                 'status' => StatusEnum::cases()[array_rand(StatusEnum::cases())],
                 'created_at' => now(),
                 'updated_at' => now(),
